@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Actividades</h1>
+  <a href="#" routerLink="/actividad/add" class="btn btn-success" *ngIf="showAdminButton">Añadir Actividad</a>
+
+
+  <table class="table table-bordered">
+      <tr>
+          <th>ID</th>
+          <th>Titulo</th>
+          <th>Descripcion</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Etapa</th>
+          <th>Participantes Máximos</th>
+      </tr>
+      <tr *ngFor="let actividad of actividades">
+          <td>{{actividad.idActividad}}</td>
+          <td>{{actividad.titulo}}</td>
+          <td>{{actividad.descripcion}}</td>
+          <td>{{actividad.fecha}}</td>
+          <td>{{actividad.hora}}</td>
+          <td>{{actividad.etapa}}</td>
+          <td>{{actividad.participantesMax}}</td>
+
+          <td>
+            <a href="#" [routerLink]="['/actividad/', actividad.idActividad, 'view']" class="btn btn-info" >View</a>
+            <a href="#" [routerLink]="['/actividad/', actividad.idActividad, 'edit']" class="btn btn-info" *ngIf="showAdminButton">Edit</a>
+            <button type="button" (click)="deleteActividad(actividad.idActividad)" class="btn btn-info" *ngIf="showAdminButton">Delete</button>
+          </td>
+      </tr>
+  </table>
+
+</div>

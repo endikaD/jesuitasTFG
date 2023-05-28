@@ -1,0 +1,58 @@
+<div class="container">
+  <h1>Añadir una nueva Actividad</h1>
+  <a href="#" routerLink="/actividad/list" class="btn btn-primary">Volver</a>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <div class="form-group">
+          <label for="titulo">Titulo:</label>
+          <input formControlName="titulo" id="titulo" type="text" class="form-control">
+          <div *ngIf="f['titulo'].touched && f['titulo'].invalid" class="alert alert-danger">
+              <div *ngIf="f['titulo'].errors && f['titulo'].errors['required']">Titulo obligatorio</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label for="descripcion">Descripcion:</label>
+          <input formControlName="descripcion" id="descripcion" type="text" class="form-control">
+          <div *ngIf="f['descripcion'].touched && f['descripcion'].invalid" class="alert alert-danger">
+              <div *ngIf="f['descripcion'].errors && f['descripcion'].errors['required']">Descripcion obligatoria</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="fecha">Fecha:</label>
+        <input formControlName="fecha" id="fecha" type="text" class="form-control">
+        <div *ngIf="f['fecha'].touched && f['fecha'].invalid" class="alert alert-danger">
+            <div *ngIf="f['fecha'].errors && f['fecha'].errors['required']">Descripcion obligatoria</div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="hora">Hora:</label>
+        <input formControlName="hora" id="hora" type="text" class="form-control">
+        <div *ngIf="f['hora'].touched && f['hora'].invalid" class="alert alert-danger">
+            <div *ngIf="f['hora'].errors && f['hora'].errors['required']">Hora obligatoria</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="etapa">Etapa:</label>
+        <input formControlName="etapa" id="etapa" type="text" class="form-control">
+        <div *ngIf="f['etapa'].touched && f['etapa'].invalid" class="alert alert-danger">
+            <div *ngIf="f['etapa'].errors && f['etapa'].errors['required']">Etapa obligatorio</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="participantesMax">Participantes Maximos:</label>
+        <input formControlName="participantesMax" id="participantesMax" type="number" class="form-control">
+        <div *ngIf="f['participantesMax'].touched && f['participantesMax'].invalid" class="alert alert-danger">
+            <div *ngIf="f['participantesMax'].errors && f['participantesMax'].errors['required']">Participantes Maximos obligatorio</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit"  [disabled]="!form.valid" >Aceptar</button>
+
+  </form>
+</div>

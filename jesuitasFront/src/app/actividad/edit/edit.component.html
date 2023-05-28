@@ -1,0 +1,38 @@
+<div class="container" >
+  <h1>Modificar Actividad</h1>
+  <a href="#" routerLink="/actividad/list" class="btn btn-primary">Back</a>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="titulo">Titulo:</label>
+      <input formControlName="titulo" id="titulo" type="text" [(ngModel)]="nuevoActividad.titulo" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <label for="descripcion">Descripcion:</label>
+      <textarea formControlName="descripcion" id="descripcion" type="text" [(ngModel)]="nuevoActividad.descripcion" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="fecha">Fecha:</label>
+      <textarea formControlName="fecha" id="fecha" type="text" [(ngModel)]="nuevoActividad.fecha" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="hora">Hora:</label>
+      <input formControlName="hora" id="hora" type="text" [(ngModel)]="nuevoActividad.hora" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <label for="etapa">Etapa:</label>
+      <input formControlName="etapa" id="etapa" type="text" [(ngModel)]="nuevoActividad.etapa" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <label for="participantesMax">Participantes Maximos:</label>
+      <input formControlName="participantesMax" id="participantesMax" type="number" [(ngModel)]="nuevoActividad.participantesMax" class="form-control"/>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Actualizar</button>
+  </form>
+</div>
